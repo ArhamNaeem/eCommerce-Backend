@@ -39,6 +39,10 @@ const ApplianceSchema = new mongoose.Schema({
       "Steam cleaners",
       "Carpet cleaners",
     ],
+    quantity: {
+      type: Number,
+      required:[true,'Must provide quantity']
+    }
   },
 }, { timestamps: true });
 

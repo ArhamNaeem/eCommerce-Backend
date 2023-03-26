@@ -27,8 +27,8 @@ const ShoeSchema = new mongoose.Schema(
     size: {
       type: [Number],
       // 'small', 'medium', 'large', 'xl', 'xxl'
-      enum: [38,39,40,41,42,43,44,45],
-      required:[true,'Must provide size']
+      enum: [38, 39, 40, 41, 42, 43, 44, 45],
+      required: [true, "Must provide size"],
     },
     price: {
       type: mongoose.Types.Decimal128,
@@ -38,10 +38,20 @@ const ShoeSchema = new mongoose.Schema(
       type: String,
       required: [true, "Must provide category"],
       enum: [
-       "Sneakers","Dress Shoes","Loafers","Scandals","Flats","Sport shoes","Heels"
+        "Sneakers",
+        "Dress Shoes",
+        "Loafers",
+        "Scandals",
+        "Flats",
+        "Sport shoes",
+        "Heels",
       ],
+    },
+    quantity: {
+      type: Number,
+      required: [true, "Must provide quantity"],
     },
   },
   { timestamps: true }
 );
-export const ShoeModel =  mongoose.model('Shoe',ShoeSchema)
+export const ShoeModel = mongoose.model("Shoe", ShoeSchema);

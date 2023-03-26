@@ -44,6 +44,10 @@ const DecorationSchema = new mongoose.Schema(
         "Fall Leaves",
       ],
     },
+    quantity: {
+      type: Number,
+      required: [true, "Must provide quantity"],
+    },
   },
   { timestamps: true }
 );

@@ -39,9 +39,13 @@ const CosmeticSchema = new mongoose.Schema(
         "Lip gloss",
         "Cleanser",
         "Moisturizer",
-          "Serum",
-        "Toner"
+        "Serum",
+        "Toner",
       ],
+    },
+    quantity: {
+      type: Number,
+      required: [true, "Must provide quantity"],
     },
   },
   { timestamps: true }

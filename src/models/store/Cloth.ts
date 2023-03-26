@@ -28,7 +28,7 @@ const ClothSchema = new mongoose.Schema(
       type: [Number],
       // 'small', 'medium', 'large', 'xl', 'xxl'
       enum: [1, 2, 3, 4, 5],
-      required:[true,'Must provide size']
+      required: [true, "Must provide size"],
     },
     price: {
       type: mongoose.Types.Decimal128,
@@ -47,6 +47,10 @@ const ClothSchema = new mongoose.Schema(
         "Women jeans",
         "Women dresses",
       ],
+    },
+    quantity: {
+      type: Number,
+      required: [true, "Must provide quantity"],
     },
   },
   { timestamps: true }
