@@ -1,8 +1,10 @@
 import express from "express";
 import productRouter from "./routes/products";
 import connectDB from "./db/connect";
+import { errorHandler } from "./middleware/errorHandler";
+import { notFound } from "./middleware/notFound";
 import dotenv from "dotenv";
-
+import 'express-async-errors'
 
 const app = express();
 dotenv.config();
@@ -16,7 +18,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1/products", productRouter);
-
+app.use(notFound)
+app.use(errorHandler)
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI)

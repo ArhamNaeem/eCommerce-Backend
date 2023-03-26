@@ -25,7 +25,7 @@ const ShoeSchema = new mongoose.Schema(
       minLength: 10,
     },
     size: {
-      type: mongoose.Types.Array<Number>,
+      type: [Number],
       // 'small', 'medium', 'large', 'xl', 'xxl'
       enum: [38,39,40,41,42,43,44,45],
       required:[true,'Must provide size']

@@ -25,7 +25,7 @@ const ClothSchema = new mongoose.Schema(
       minLength: 10,
     },
     size: {
-      type: mongoose.Types.Array<Number>,
+      type: [Number],
       // 'small', 'medium', 'large', 'xl', 'xxl'
       enum: [1, 2, 3, 4, 5],
       required:[true,'Must provide size']

@@ -3,11 +3,12 @@ const productRouter = express.Router()
 import {
     getAllProducts,
     getProduct,
-    addProduct,
+    addClothes,
     updateProduct,
     deleteProduct
 } from '../controllers/products';
 
-productRouter.route('/').get(getAllProducts).post(addProduct)
+productRouter.route('/').get(getAllProducts)
+productRouter.route('/cloth').post(addClothes)
 productRouter.route('/:id').get(getProduct).patch(updateProduct).delete(deleteProduct)
 export default productRouter
