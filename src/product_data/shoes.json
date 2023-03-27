@@ -1,0 +1,122 @@
+[
+  {
+    "shoe_type": "Air Max 90",
+    "img_url": "https://www.example.com/shoes/air-max-90.jpg",
+    "color": "white",
+    "description": "Classic white and grey Air Max 90s with red accents.",
+    "size": [38, 39, 42, 43, 44, 45],
+    "price": 120.0,
+    "category": "Sneakers",
+    "quantity": 10
+  },
+  {
+    "shoe_type": "Black Leather Dress Shoes",
+    "img_url": "https://www.example.com/shoes/black-dress-shoes.jpg",
+    "color": "black",
+    "description": "Elegant black leather dress shoes, perfect for any formal event.",
+    "size": [38, 39, 40, 41, 42, 43],
+    "price": 150.0,
+    "category": "Dress Shoes",
+    "quantity": 10
+  },
+  {
+    "shoe_type": "Nike React",
+    "img_url": "https://www.example.com/shoes/nike-react-infinity-run-flyknit.jpg",
+    "color": "blue",
+    "description": "Comfortable and lightweight blue running shoes with Flyknit technology.",
+    "size": [39, 40, 41, 42, 43, 44, 45],
+    "price": 130.0,
+    "category": "Sport shoes",
+    "quantity": 20
+  },
+  {
+    "shoe_type": "Adidas Superstar",
+    "img_url": "https://www.example.com/shoes/adidas-superstar.jpg",
+    "color": "white",
+    "description": "Classic white and black Adidas Superstar sneakers with rubber toe cap.",
+    "size": [38, 39, 44, 45],
+    "price": 100.0,
+    "category": "Sneakers",
+    "quantity": 4
+  },
+  {
+    "shoe_type": "Nike Air Jordan 1",
+    "img_url": "https://www.example.com/shoes/nike-air-jordan-1.jpg",
+    "color": "red",
+    "description": "Iconic red and black Nike Air Jordan 1 basketball shoes.",
+    "size": [38, 39, 40, 41, 42, 43, 44, 45],
+    "price": 180.0,
+    "category": "Sport shoes",
+    "quantity": 5
+  },
+  {
+    "shoe_type": "Converse Chuck Taylor All Star",
+    "img_url": "https://www.example.com/shoes/converse-chuck-taylor-all-star.jpg",
+    "color": "purple",
+    "description": "High-top purple Converse sneakers with white laces.",
+    "size": [40, 41, 42, 43, 44, 45],
+    "price": 70.0,
+    "category": "Sneakers",
+    "quantity": 20
+  },
+  {
+    "shoe_type": "Vans Old Skool",
+    "img_url": "https://www.example.com/shoes/vans-old-skool.jpg",
+    "color": "green",
+    "description": "Low-top green and white Vans sneakers with iconic side stripe.",
+    "size": [38, 39, 40, 41, 42, 43, 44, 45],
+    "price": 65.0,
+    "category": "Sneakers",
+    "quantity": 10
+  },
+  {
+    "shoe_type": "Steve Madden Irenee",
+    "img_url": "https://www.example.com/shoes/steve-madden-irenee.jpg",
+    "color": "black",
+    "description": "Simple and elegant black suede sandals with block heel.",
+    "size": [38, 39, 40, 41, 42, 43],
+    "price": 90.0,
+    "category": "Sandals",
+    "quantity": 20
+  },
+  {
+    "shoe_type": "Reebok Classic Leather",
+    "img_url": "https://www.example.com/shoes/reebok-classic-leather.jpg",
+    "color": "white",
+    "description": "Clean and simple white leather Reebok sneakers with classic design.",
+    "size": [38, 39, 42, 43, 44, 45],
+    "price": 80.0,
+    "category": "Sneakers",
+    "quantity": 10
+  },
+  {
+    "shoe_type": "Sam Edelman Hazel",
+    "img_url": "https://www.example.com/shoes/sam-edelman-hazel.jpg",
+    "color": "red",
+    "description": "Pointed toe red suede heels with stiletto heel.",
+    "size": [38, 39, 40, 41, 42],
+    "price": 120.0,
+    "category": "Heels",
+    "quantity": 10
+  },
+  {
+    "shoe_type": "Gucci Princetown",
+    "img_url": "https://www.example.com/shoes/gucci-princetown.jpg",
+    "color": "black",
+    "description": "Iconic black leather loafers with gold-tone horsebit detail.",
+    "size": [38, 39, 40, 41, 42],
+    "price": 750.0,
+    "category": "Loafers",
+    "quantity": 10
+  },
+  {
+    "shoe_type": "TOMS Classic Alpargata",
+    "img_url": "https://www.example.com/shoes/toms-classic-alpargata.jpg",
+    "color": "blue",
+    "description": "Casual blue canvas slip-on flats with elastic V for easy on and off.",
+    "size": [38, 39, 40, 41, 42, 43, 44, 45],
+    "price": 50.0,
+    "category": "Flats",
+    "quantity": 10
+  }
+]

@@ -1,0 +1,91 @@
+[
+  {
+    "appliance_type": "Samsung Smart Refrigerator",
+    "img_url": "https://example.com/samsung_smart_refrigerator.jpg",
+    "description": "A smart refrigerator that can connect to the internet and help you keep track of your groceries",
+    "price": 2199.99,
+    "category": "Refrigerators",
+    "quantity": 2
+  },
+  {
+    "appliance_type": "Whirlpool Upright Freezer",
+    "img_url": "https://example.com/whirlpool_upright_freezer.jpg",
+    "description": "An energy-efficient freezer with plenty of storage space for all your frozen goods",
+    "price": 799.99,
+    "category": "Freezers",
+    "quantity": 5
+  },
+  {
+    "appliance_type": "GE Profile Microwave",
+    "img_url": "https://example.com/ge_profile_microwave.jpg",
+    "description": "A sleek and powerful microwave with multiple cooking settings",
+    "price": 299.99,
+    "category": "Microwaves",
+    "quantity": 10
+  },
+  {
+    "appliance_type": "Bosch Dishwasher",
+    "img_url": "https://example.com/bosch_dishwasher.jpg",
+    "description": "A high-end dishwasher with multiple wash cycles and quiet operation",
+    "price": 1299.99,
+    "category": "Dishwashers",
+    "quantity": 5
+  },
+  {
+    "appliance_type": "LG Front Load Washing Machine",
+    "img_url": "https://example.com/lg_front_load_washing_machine.jpg",
+    "description": "A high-capacity washing machine with multiple wash cycles and smart features",
+    "price": 1399.99,
+    "category": "Washing machines",
+    "quantity": 20
+  },{
+    "appliance_type": "LG Side-by-Side Refrigerator",
+    "img_url": "https://www.lg.com/us/images/refrigerators/md07500044/gallery/medium01.jpg",
+    "description": "This spacious refrigerator features an ice and water dispenser, and adjustable shelves.",
+    "price": 1499.99,
+    "category": "Refrigerators",
+    "quantity": 10
+  },{
+    "appliance_type": "Bosch Built-In Dishwasher",
+    "img_url": "https://www.bosch-home.com/us/media/Products/All-Products/SGX68U55UC/SGX68U55UC-164219-GalleryImage-png.png",
+    "description": "This sleek dishwasher has a third rack for extra capacity, a sanitize cycle, and quiet operation.",
+    "price": 899.99,
+    "category": "Dishwashers",
+    "quantity": 3
+  },{
+    "appliance_type": "Samsung Top-Load Washer",
+    "img_url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6419/6419202_sd.jpg",
+    "description": "This high-efficiency washer features 12 preset wash cycles and a steam cleaning option.",
+    "price": 849.99,
+    "category": "Washing machines",
+    "quantity": 5
+  },{
+    "appliance_type": "Whirlpool Chest Freezer",
+    "img_url": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6254/6254979_sd.jpg",
+    "description": "This spacious freezer has a removable basket for easy organization and temperature control.",
+    "price": 499.99,
+    "category": "Freezers",
+    "quantity": 2
+  },{
+    "appliance_type": "GE Over-the-Range Microwave",
+    "img_url": "https://images.homedepot-static.com/productImages/47454816-fd30-40c8-90dd-290c3d7d2e9c/svn/ge-over-the-range-microwaves-jvm3160dfww-64_1000.jpg",
+    "description": "This microwave has a spacious 1.6 cu. ft. capacity and multiple cooking options.",
+    "price": 229.99,
+    "category": "Microwaves",
+    "quantity":5
+  },{
+    "appliance_type": "Shark Navigator Lift-Away Vacuum",
+    "img_url": "https://images-na.ssl-images-amazon.com/images/I/71jiNKC1ZuL._AC_SL1500_.jpg",
+    "description": "This versatile vacuum can be used as an upright, handheld and features a HEPA filter.",
+    "price": 199.99,
+    "category": "Vacuum cleaners",
+    "quantity": 10
+  },{
+    "appliance_type": "LG Smart Wi-Fi Enabled Electric Double Oven",
+    "img_url": "https://www.lg.com/us/images/wall-ovens/md07501706/gallery/d1.jpg",
+    "description": "This double oven features a convection system, smart home compatibility, and a self-cleaning mode.",
+    "price": 2799.99,
+    "category": "Ovens",
+    "quantity": 10
+  }
+]

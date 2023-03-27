@@ -41,7 +41,7 @@ const ShoeSchema = new mongoose.Schema(
         "Sneakers",
         "Dress Shoes",
         "Loafers",
-        "Scandals",
+        "Sandals",
         "Flats",
         "Sport shoes",
         "Heels",

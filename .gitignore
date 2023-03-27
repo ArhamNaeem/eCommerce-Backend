@@ -1,3 +1,3 @@
 /node_modules
-/product_data
+src/product_data
 .env

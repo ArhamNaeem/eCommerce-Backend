@@ -16,7 +16,7 @@ const ApplianceSchema = new mongoose.Schema({
   description: {
     type: String,
     required: [true, "Must provide description"],
-    maxLength: 75,
+    maxLength: 100,
     minLength: 10,
   },
 

@@ -1,0 +1,107 @@
+[
+  {
+    "furniture_type": "Modern Sectional Sofa",
+    "img_url": "https://www.example.com/images/sectional-sofa.jpg",
+    "description": "This sleek and stylish sofa, perfect for any modern living room.",
+    "price": 899.99,
+    "category": "Sofas",
+    "quantity":5
+  },
+  {
+    "furniture_type": "Vintage Leather Armchair",
+    "img_url": "https://www.example.com/images/vintage-armchair.jpg",
+    "description": "Leather armchair, a classic vintage look that will add elegance to any room.",
+    "price": 499.99,
+    "category": "Chairs",
+    "quantity":10
+  },
+  {
+    "furniture_type": "Rustic Wooden Dining Table",
+    "img_url": "https://www.example.com/images/rustic-dining-table.jpg",
+    "description": "Wooden dining table with rustic charm that will make your family meals even more enjoyable.",
+    "price": 799.99,
+    "category": "Dining tables",
+    "quantity":30
+  },{
+    "furniture_type": "Modern Glass Coffee Table",
+    "img_url": "https://www.example.com/images/modern-coffee-table.jpg",
+    "description": "This sleek glass coffee table is perfect for a modern living room with a minimalist style.",
+    "price": 349.99,
+    "category": "Sidetables","quantity":30
+  },{
+    "furniture_type": "Mid-Century Modern Sideboard",
+    "img_url": "https://www.example.com/images/mid-century-sideboard.jpg",
+    "description": "This stylish mid-century modern sideboard is perfect for storing your dinnerware and serving dishes.",
+    "price": 1199.99,
+    "category": "Buffets",
+    "quantity":20
+  },{
+    "furniture_type": "Classic Wooden Bed Frame",
+    "img_url": "https://www.example.com/images/classic-bed-frame.jpg",
+    "description": "This beautiful wooden bed frame has a classic design that will never go out of style.",
+    "price": 699.99,
+    "category": "Beds",
+    "quantity": 12
+  },{
+    "furniture_type": "Industrial Metal Desk",
+    "img_url": "https://www.example.com/images/industrial-desk.jpg",
+    "description": "This sturdy metal desk has an industrial look that will make your home office stand out.",
+    "price": 549.99,
+    "category": "Desks",
+    "quantity":5
+  },{
+    "furniture_type": "Mid-Century Modern Lounge Chair",
+    "img_url": "https://www.example.com/images/mid-century-lounge-chair.jpg",
+    "description": "This comfortable and stylish lounge chair that adds flair to any living room.",
+    "price": 899.99,
+    "category": "Chairs",
+    "quantity":10
+  },{
+    "furniture_type": "Minimalist White Dresser",
+    "img_url": "https://www.example.com/images/white-dresser.jpg",
+    "description": "This simple and elegant white dresser is perfect for a modern minimalist bedroom.",
+    "price": 499.99,
+    "category": "Dressers",
+    "quantity": 5
+  },{
+    "furniture_type": "Vintage Writing Desk",
+    "img_url": "https://www.example.com/images/vintage-writing-desk.jpg",
+    "description": "This beautiful vintage writing desk has a classic look that inspires you to write novels.",
+    "price": 799.99,
+    "category": "Desks","quantity":2
+  },{
+    "furniture_type": "Traditional Wooden Rocking Chair",
+    "img_url": "https://www.example.com/images/traditional-rocking-chair.jpg",
+    "description": "This classic wooden rocking chair is perfect for a cozy corner of your living room or bedroom.",
+    "price": 349.99,
+    "category": "Chairs","quantity": 20
+  },{
+    "furniture_type": "Modern Metal Bookcase",
+    "img_url": "https://www.example.com/images/modern-bookcase.jpg",
+    "description": "This sleek metal bookcase is perfect for displaying your favorite books and decorative items.",
+    "price": 599.99,
+    "category": "Bookcases",
+    "quantity":20
+  },{
+    "furniture_type": "Rustic Wooden Bar Stool",
+    "img_url": "https://www.example.com/images/rustic-bar-stool.jpg",
+    "description": "Sturdy wooden bar stool, has a rustic charm that will add character to your home bar.",
+    "price": 149.99,
+    "category": "Bar stools",
+    "quantity":10
+  },{
+    "furniture_type": "Mid-Century Modern TV Stand",
+    "img_url": "https://www.example.com/images/mid-century-tv-stand.jpg",
+    "description": "This stylish mid-century modern TV stand is perfect for a retro-inspired living room.",
+    "price": 699.99,
+    "category": "TV stands",
+    "quantity":10
+  },{
+    "furniture_type": "Elegant Upholstered Headboard",
+    "img_url": "https://www.example.com/images/upholstered-headboard.jpg",
+    "description": "This elegant upholstered headboard will add a touch of luxury to your bedroom.",
+    "price": 399.99,
+    "category": "Headboards",
+    "quantity":30
+  }
+]

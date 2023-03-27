@@ -1,0 +1,96 @@
+[
+    {
+      "decoration_type": "Antique Clock",
+      "img_url": "https://example.com/clocks/antique-clock.jpg",
+      "description": "Beautiful antique clock made in the 19th century",
+      "price": 175.99,
+      "category": "Clocks",
+      "quantity":10
+    },
+    {
+      "decoration_type": "Table Lamp",
+      "img_url": "https://example.com/lamps/table-lamp.jpg",
+      "description": "Modern table lamp with a sleek design and adjustable brightness",
+      "price": 89.5,
+      "category": "Table Lamps",
+      "quantity": 40
+    },{
+      "decoration_type": "Mirrored Wall Art",
+      "img_url": "https://example.com/mirrors/mirrored-wall-art.jpg",
+      "description": "Elegant mirrored wall art with a unique geometric pattern",
+      "price": 299.99,
+      "category": "Mirrors",
+      "quantity":2
+    },{
+      "decoration_type": "Oil Painting",
+      "img_url": "https://example.com/paintings/oil-painting.jpg",
+      "description": "Hand-painted oil painting of a beautiful landscape",
+      "price": 450.0,
+      "category": "Paintings",
+      "quantity": 5
+    },
+    {
+      "decoration_type": "Decorative Wreath",
+      "img_url": "https://example.com/wreaths/decorative-wreath.jpg",
+      "description": "Beautifully crafted wreath made with natural materials",
+      "price": 65.0,
+      "category": "Wreaths"
+      ,"quantity":20
+    },{
+      "decoration_type": "Area Rug",
+      "img_url": "https://example.com/rugs/area-rug.jpg",
+      "description": "High-quality area rug with a modern abstract design",
+      "price": 199.99,
+      "category": "Area Rugs",
+      "quantity":20
+    },{
+      "decoration_type": "Floor Vase",
+      "img_url": "https://example.com/vases/floor-vase.jpg",
+      "description": "Elegant floor vase with a tall and slim design",
+      "price": 120.0,
+      "category": "Floor Vases",
+      "quantity":50
+    },{
+      "decoration_type": "Christmas Tree Ornaments",
+      "img_url": "https://example.com/ornaments/christmas-tree-ornaments.jpg",
+      "description": "Set of 12 decorative ornaments for your Christmas tree",
+      "price": 25.99,
+      "category": "Ornaments",
+      "quantity": 60
+    },{
+      "decoration_type": "Candle Holder",
+      "img_url": "https://example.com/candles/candle-holder.jpg",
+      "description": "Metallic candle holder with a modern and minimalist design",
+      "price": 42.5,
+      "category": "Candles",
+      "quantity": 60
+    },{
+      "decoration_type": "Decorative Clock",
+      "img_url": "https://example.com/clock1.jpg",
+      "description": "A modern decorative clock with a metal frame",
+      "price": 25.99,
+      "category": "Clocks",
+      "quantity":10
+    },{
+      "decoration_type": "Decorative Mirror",
+      "img_url": "https://example.com/mirror2.jpg",
+      "description": "A large rectangular mirror with a gold frame",
+      "price": 85.5,
+      "category": "Mirrors",
+      "quantity":4
+    },{
+      "decoration_type": "Abstract Painting",
+      "img_url": "https://example.com/painting3.jpg",
+      "description": "An abstract painting with bold colors and shapes",
+      "price": 120.0,
+      "category": "Paintings",
+      "quantity":4
+    },{
+      "decoration_type": "Table Vase",
+      "img_url": "https://example.com/vase4.jpg",
+      "description": "A ceramic vase with intricate floral patterns",
+      "price": 18.75,
+      "category": "Table Vases",
+      "quantity":10
+    }
+]

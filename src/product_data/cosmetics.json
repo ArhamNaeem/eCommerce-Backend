@@ -1,0 +1,106 @@
+[
+  {
+    "cosmetic_type": "Maybelline Fit Me Matte + Poreless Foundation",
+    "img_url": "https://www.example.com/maybelline-foundation.jpg",
+    "description": "A lightweight foundation that provides full coverage and controls shine for a natural, matte finish.",
+    "price": 12.99,
+    "category": "Foundation",
+    "quantity": 10
+  },
+  {
+    "cosmetic_type": "Nars Orgasm Blush",
+    "img_url": "https://www.example.com/nars-blush.jpg",
+    "description": "A universally flattering blush that gives a natural-looking flush and a hint of shimmer.",
+    "price": 29.99,
+    "category": "Blush",
+    "quantity": 5
+  },
+  {
+    "cosmetic_type": "Fenty Beauty Killawatt Freestyle Highlighter",
+    "img_url": "https://www.example.com/fenty-highlighter.jpg",
+    "description": "A long-wear, light-as-air highlighter that highlights your skin with a soft, luminous finish.",
+    "price": 36.5,
+    "category": "Highlighter",
+    "quantity": 5
+  },
+  {
+    "cosmetic_type": "Tarte Shape Tape Concealer",
+    "img_url": "https://www.example.com/tarte-concealer.jpg",
+    "description": "A vegan, full-coverage concealer that helps to brighten and smooth your skin.",
+    "price": 27.0,
+    "category": "Concealer",
+    "quantity": 20
+  },
+  {
+    "cosmetic_type": "L'Oreal Paris Voluminous Lash Paradise Mascara",
+    "img_url": "https://www.example.com/loreal-mascara.jpg",
+    "description": "A volumizing mascara that delivers intense volume and length for a full, dramatic look.",
+    "price": 11.99,
+    "category": "Mascara",
+    "quantity": 12
+  },
+  {
+    "cosmetic_type": "Stila Stay All Day Waterproof Liquid Eyeliner",
+    "img_url": "https://www.example.com/stila-eyeliner.jpg",
+    "description": "A waterproof eyeliner that glides on smoothly and lasts all day without smudging or running.",
+    "price": 22.0,
+    "category": "Eyeliner",
+    "quantity": 10
+  },
+  {
+    "cosmetic_type": "Anastasia Beverly Hills Modern Eyeshadow Palette",
+    "img_url": "https://www.example.com/abhb-eyeshadow.jpg",
+    "description": "A highly pigmented eyeshadow palette with 14 shades giving versatile eye looks.",
+    "price": 45.0,
+    "category": "Eyeshadow",
+    "quantity": 30
+  },
+  {
+    "cosmetic_type": "MAC Matte Lipstick",
+    "img_url": "https://www.example.com/mac-lipstick.jpg",
+    "description": "A classic matte lipstick that delivers rich, bold color with a non-drying, comfortable formula.",
+    "price": 19.0,
+    "category": "Lipstick",
+    "quantity": 10
+  },
+  {
+    "cosmetic_type": "Fenty Beauty Gloss Bomb Universal Lip Luminizer",
+    "img_url": "https://www.example.com/fenty-lipgloss.jpg",
+    "description": "A non-sticky, high-shine lip gloss that flatters all skin tones.",
+    "price": 22.0,
+    "category": "Lip gloss",
+    "quantity": 20
+  },
+  {
+    "cosmetic_type": "Full Coverage Foundation",
+    "img_url": "https://example.com/full-coverage-foundation.jpg",
+    "description": "Provides full coverage for all skin types",
+    "price": 29.99,
+    "category": "Foundation",
+    "quantity": 10
+  },
+  {
+    "cosmetic_type": "Luminous Liquid Highlighter",
+    "img_url": "https://example.com/luminous-liquid-highlighter.jpg",
+    "description": "Gives a subtle glow to the skin",
+    "price": 19.99,
+    "category": "Highlighter",
+    "quantity": 5
+  },
+  {
+    "cosmetic_type": "Facial Cleanser",
+    "img_url": "https://example.com/facial-cleanser.jpg",
+    "description": "Removes impurities and unclogs pores for a refreshed complexion",
+    "price": 24.99,
+    "category": "Cleanser",
+    "quantity": 20
+  },
+  {
+    "cosmetic_type": "Ultra-Hydrating Moisturizer",
+    "img_url": "https://example.com/ultra-hydrating-moisturizer.jpg",
+    "description": "Keeps skin moisturized and supple for 24 hours",
+    "price": 29.99,
+    "category": "Moisturizer",
+    "quantity": 10
+  }
+]
