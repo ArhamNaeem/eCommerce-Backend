@@ -5,42 +5,79 @@ import { CosmeticModel } from "../models/store/Cosmetic";
 import { ApplianceModel } from "../models/store/Appliance";
 import { DecorationModel } from "../models/store/Decoration";
 import "express-async-errors";
-import mongoose from "mongoose";
-export const getAllProducts = (req: any, res: any) => {
-  console.log(req.query);
-  res.send("get all products");
-};
-export const getProduct = (req: any, res: any) => {
-  res.send("get a product");
-};
-export const updateProduct = (req: any, res: any) => {
-  res.send("update product");
-};
-export const deleteProduct = (req: any, res: any) => {
-  res.send("delete product");
+import {SortOrder } from "mongoose";
+import { BadRequest } from "../errors";
+
+
+export const getAllProducts = async (req: any, res: any) => {
+  const { type, sortOrder} = req.query;
+  const sortBy: Record<string,SortOrder> = sortOrder ? { price: sortOrder } : {createdAt: 1}
+  const validFields: Record<string, string> = {
+    color: "$eq",
+    size: "$in", // size can be equal to any value inside the array
+    category: "$eq",
+  };
+  const query: Record<string, Record<string, unknown>> = {};
+  let result;
+  
+
+  //inserting queried parameters inside query object (makes code concise)
+  for (const [field, value] of Object.entries(req.query)) {
+    if (validFields[field]) {
+      query[field] = { [validFields[field]]: value };
+    }
+  }
+  if (type) {
+    result = await getModelData(type, sortBy, query);
+  }
+  else {
+    const [clothes, shoes, furniture, appliances, decorations, cosmetics] =
+      await Promise.all([
+        getModelData("clothes", sortBy, {}),
+        getModelData("shoes", sortBy, {}),
+        getModelData("furniture", sortBy, {}),
+        getModelData("appliances", sortBy, {}),
+        getModelData("decorations", sortBy, {}),
+        getModelData("cosmetics", sortBy, {}),
+      ]);
+    result = [
+      ...clothes,
+      ...shoes,
+      ...furniture,
+      ...appliances,
+      ...decorations,
+      ...cosmetics,
+    ];
+  }
+  res.send({
+    success: true,
+    data: result,
+  });
 };
 
-export const addClothes = async (req: any, res: any) => {
-  const task = await ClothModel.create(req.body);
-  res.status(200).json({ success: true, msg: "product added" });
-};
-export const addShoes = async (req: any, res: any) => {
-  const task = await ShoeModel.create(req.body);
-  res.status(200).json({ success: true, msg: "product added" });
-};
-export const addFurniture = async (req: any, res: any) => {
-  const task = await FurnitureModel.create(req.body);
-  res.status(200).json({ success: true, msg: "product added" });
-};
-export const addDecoration = async (req: any, res: any) => {
-  const task = await DecorationModel.create(req.body);
-  res.status(200).json({ success: true, msg: "product added" });
-};
-export const addAppliance = async (req: any, res: any) => {
-  const task = await ApplianceModel.create(req.body);
-  res.status(200).json({ success: true, msg: "product added" });
-};
-export const addCosmetic = async (req: any, res: any) => {
-  const task = await CosmeticModel.create(req.body);
-  res.status(200).json({ success: true, msg: "product added" });
+const getModelData = async (
+  type: string,
+  sortBy: Record<string,SortOrder>,
+  query: Record<string, unknown>
+) => {
+  switch (type) {
+    case "clothes":
+      return await ClothModel.find(query).sort(sortBy);
+    case "shoes":
+      return await ShoeModel.find(query).sort(sortBy);
+    case "appliances":
+      return await ApplianceModel.find(query).sort(sortBy);
+
+    case "decorations":
+      return await DecorationModel.find(query).sort(sortBy);
+
+    case "cosmetics":
+      return await CosmeticModel.find(query).sort(sortBy);
+
+    case "furniture":
+      return await FurnitureModel.find(query).sort(sortBy);
+
+    default:
+      throw new BadRequest(`Type, ${type} doesn't exist`)
+  }
 };
