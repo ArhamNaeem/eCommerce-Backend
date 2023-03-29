@@ -5,13 +5,18 @@ import { CosmeticModel } from "../models/store/Cosmetic";
 import { ApplianceModel } from "../models/store/Appliance";
 import { DecorationModel } from "../models/store/Decoration";
 import "express-async-errors";
-import {SortOrder } from "mongoose";
+import { SortOrder } from "mongoose";
 import { BadRequest } from "../errors";
-
+import { validate } from "./productValidation";
 
 export const getAllProducts = async (req: any, res: any) => {
-  const { type, sortOrder} = req.query;
-  const sortBy: Record<string,SortOrder> = sortOrder ? { price: sortOrder } : {createdAt: 1}
+  const DEFAULT_SORT_FIELD: string = "createdAt";
+  const DEFAULT_SORT_VALUE: SortOrder = 1;
+  const { type, sortOrder } = req.query;
+  validate(req.query);
+  const sortBy: Record<string, SortOrder> = sortOrder
+    ? { price: sortOrder }
+    : { [DEFAULT_SORT_FIELD]: DEFAULT_SORT_VALUE };
   const validFields: Record<string, string> = {
     color: "$eq",
     size: "$in", // size can be equal to any value inside the array
@@ -19,7 +24,6 @@ export const getAllProducts = async (req: any, res: any) => {
   };
   const query: Record<string, Record<string, unknown>> = {};
   let result;
-  
 
   //inserting queried parameters inside query object (makes code concise)
   for (const [field, value] of Object.entries(req.query)) {
@@ -29,8 +33,7 @@ export const getAllProducts = async (req: any, res: any) => {
   }
   if (type) {
     result = await getModelData(type, sortBy, query);
-  }
-  else {
+  } else {
     const [clothes, shoes, furniture, appliances, decorations, cosmetics] =
       await Promise.all([
         getModelData("clothes", sortBy, {}),
@@ -57,7 +60,7 @@ export const getAllProducts = async (req: any, res: any) => {
 
 const getModelData = async (
   type: string,
-  sortBy: Record<string,SortOrder>,
+  sortBy: Record<string, SortOrder>,
   query: Record<string, unknown>
 ) => {
   switch (type) {
@@ -78,6 +81,6 @@ const getModelData = async (
       return await FurnitureModel.find(query).sort(sortBy);
 
     default:
-      throw new BadRequest(`Type, ${type} doesn't exist`)
+      throw new BadRequest(`Type, ${type} doesn't exist`);
   }
 };
