@@ -14,10 +14,11 @@ app.use(express.json());
 
 
 app.get("/", (req, res) => {
-  res.send("hi");
+  res.send("API");
 });
 
 app.use("/api/v1/products", productRouter);
+app.use('/api/v1/auth/',)
 app.use(notFound)
 app.use(errorHandler)
 const start = async () => {

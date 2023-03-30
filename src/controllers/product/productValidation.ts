@@ -1,4 +1,4 @@
-import { BadRequest } from "../errors";
+import { BadRequest } from "../../errors";
 
 const clothCategory = [
   "Men shirts",

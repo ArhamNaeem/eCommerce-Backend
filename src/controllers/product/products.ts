@@ -1,12 +1,12 @@
-import { ClothModel } from "../models/store/Cloth";
-import { ShoeModel } from "../models/store/Shoe";
-import { FurnitureModel } from "../models/store/Furniture";
-import { CosmeticModel } from "../models/store/Cosmetic";
-import { ApplianceModel } from "../models/store/Appliance";
-import { DecorationModel } from "../models/store/Decoration";
+import { ClothModel } from "../../models/store/Cloth";
+import { ShoeModel } from "../../models/store/Shoe";
+import { FurnitureModel } from "../../models/store/Furniture";
+import { CosmeticModel } from "../../models/store/Cosmetic";
+import { ApplianceModel } from "../../models/store/Appliance";
+import { DecorationModel } from "../../models/store/Decoration";
 import "express-async-errors";
 import { SortOrder } from "mongoose";
-import { BadRequest } from "../errors";
+import { BadRequest } from "../../errors";
 import { validate } from "./productValidation";
 
 export const getAllProducts = async (req: any, res: any) => {
