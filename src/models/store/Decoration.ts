@@ -46,6 +46,10 @@ const DecorationSchema = new mongoose.Schema(
     },
     quantity: {
       type: Number,
+      validate: {
+        validator: (value: number) => value > 0,
+        message: "Valid quantity shall be provided",
+      },
       required: [true, "Must provide quantity"],
     },
   },
