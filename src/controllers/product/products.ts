@@ -9,10 +9,6 @@ import { SortOrder } from "mongoose";
 import { BadRequest } from "../../errors";
 import { validate } from "./productValidation";
 
-// interface resultType extends Document{
-//   hasNext: boolean;
-// }
-
 export const getAllProducts = async (req: any, res: any) => {
   const DEFAULT_SORT_FIELD: string = "createdAt";
   const DEFAULT_SORT_VALUE: SortOrder = 1;
@@ -58,7 +54,7 @@ export const getAllProducts = async (req: any, res: any) => {
   }
   res.send({
     success: true,
-    // nbHit: result.length,
+    nbHit: result.length,
     data: result,
   });
 };
@@ -70,37 +66,39 @@ const getModelData = async (
   page: number | undefined
 ) => {
   let result;
+  let resultNext;
   const pageNumber = page || 1;
-  //if query doesnt exist decrease limit (for all)
-  const limit = 12;
+  const limit = !query.lengtH ? 2 : 12;
   const skip = (pageNumber - 1) * limit;
   switch (type) {
     case "clothes":
       result = ClothModel.find(query);
+      resultNext = ClothModel.find(query);
+      break;
     case "shoes":
       result = ShoeModel.find(query);
+      resultNext = ShoeModel.find(query);
       break;
     case "appliances":
       result = ApplianceModel.find(query);
+      resultNext = ApplianceModel.find(query);
 
       break;
     case "decorations":
       result = DecorationModel.find(query);
-
+      resultNext = DecorationModel.find(query);
+      break;
     case "cosmetics":
       result = CosmeticModel.find(query);
-
+      resultNext = CosmeticModel.find(query);
+      break;
     case "furniture":
       result = FurnitureModel.find(query);
-
+      resultNext = FurnitureModel.find(query);
+      break;
     default:
       throw new BadRequest(`Type, ${type} doesn't exist`);
   }
-  const nextPage = pageNumber + 1;
-  const skipNext = (nextPage - 1) * limit;
-  const nextResult = await result.skip(skipNext);
-  result = await result.skip(skip).limit(limit).sort(sortBy); 
-  console.log(nextResult)
-  // result.hasNext = nextResult.length ? true:false
-  return result;
+
+  return await result.skip(skip).limit(limit).sort(sortBy);
 };
