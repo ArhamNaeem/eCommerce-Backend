@@ -1,3 +1,4 @@
+import express from "express";
 import { ClothModel } from "../../models/store/Cloth";
 import { ShoeModel } from "../../models/store/Shoe";
 import { FurnitureModel } from "../../models/store/Furniture";
@@ -8,13 +9,19 @@ import "express-async-errors";
 import { SortOrder } from "mongoose";
 import { BadRequest } from "../../errors";
 import { validate } from "./productValidation";
+import QueryString, { ParsedQs } from "qs";
 
-export const getAllProducts = async (req: any, res: any) => {
+
+export const getAllProducts = async (
+  req: express.Request,
+  res: express.Response
+) => {
+
   const DEFAULT_SORT_FIELD: string = "createdAt";
   const DEFAULT_SORT_VALUE: SortOrder = 1;
-  const { type, sortOrder, page } = req.query;
+  const { type, sortOrder, page }:ParsedQs = req.query;
   validate(req.query);
-  const sortBy: Record<string, SortOrder> = sortOrder
+  const sortBy = sortOrder
     ? { price: sortOrder }
     : { [DEFAULT_SORT_FIELD]: DEFAULT_SORT_VALUE };
   const validFields: Record<string, string> = {
@@ -32,16 +39,16 @@ export const getAllProducts = async (req: any, res: any) => {
     }
   }
   if (type) {
-    result = await getModelData(type, sortBy, query, page);
+    result = await getModelData(type, sortBy, query, page,false);
   } else {
     const [clothes, shoes, furniture, appliances, decorations, cosmetics] =
       await Promise.all([
-        getModelData("clothes", sortBy, {}, page),
-        getModelData("shoes", sortBy, {}, page),
-        getModelData("furniture", sortBy, {}, page),
-        getModelData("appliances", sortBy, {}, page),
-        getModelData("decorations", sortBy, {}, page),
-        getModelData("cosmetics", sortBy, {}, page),
+        getModelData("clothes", sortBy, {}, page,true),
+        getModelData("shoes", sortBy, {}, page,true),
+        getModelData("furniture", sortBy, {}, page,true),
+        getModelData("appliances", sortBy, {}, page,true),
+        getModelData("decorations", sortBy, {}, page,true),
+        getModelData("cosmetics", sortBy, {}, page,true),
       ]);
     result = [
       ...clothes,
@@ -60,15 +67,22 @@ export const getAllProducts = async (req: any, res: any) => {
 };
 
 const getModelData = async (
-  type: string,
-  sortBy: Record<string, SortOrder>,
+  type: string | string[] | QueryString.ParsedQs | QueryString.ParsedQs[],
+  sortBy: any,
   query: Record<string, unknown>,
-  page: number | undefined
+  page:
+    | string
+    | QueryString.ParsedQs
+    | string[]
+    | QueryString.ParsedQs[]
+    | undefined,
+  sendAllDocuments:boolean
 ) => {
   let result;
   let resultNext;
-  const pageNumber = page || 1;
-  const limit = !query.lengtH ? 2 : 12;
+  const pageNumber = Number(page) || 1;
+  
+  const limit = sendAllDocuments? 2: 12;
   const skip = (pageNumber - 1) * limit;
   switch (type) {
     case "clothes":

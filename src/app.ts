@@ -6,6 +6,7 @@ import { notFound } from "./middleware/notFound";
 import dotenv from "dotenv";
 import 'express-async-errors'
 import authRouter from "./routes/auth";
+import { InternalServerError } from "./errors";
 
 const app = express();
 dotenv.config();
@@ -24,7 +25,12 @@ app.use(notFound)
 app.use(errorHandler)
 const start = async () => {
   try {
-    await connectDB(process.env.MONGO_URI)
+    const uri = process.env.MONGO_URI
+    if (!uri) {
+      throw new InternalServerError('URI NOT DEFINED!')
+    }
+      await connectDB(uri)
+    
     app.listen(port, () => {
       console.log(`LISTENING ON PORT ${port}`);
     });

@@ -1,3 +1,4 @@
+import { ParsedQs } from "qs";
 import { BadRequest } from "../../errors";
 
 const clothCategory = [
@@ -80,7 +81,7 @@ const applianceCategory = [
   "Carpet cleaners",
 ];
 
-export const validate = (queryParams: any) => {
+export const validate = (queryParams: ParsedQs) => {
   const { type, category, color, size } = queryParams;
   if (!type && (category || color || size)) {
     throw new BadRequest("Type shall be identified");
@@ -102,19 +103,22 @@ export const validate = (queryParams: any) => {
   }
 };
 
-export const isValidCategory = (type: string, category: string) => {
+export const isValidCategory = (
+  type: string | string[] | ParsedQs | ParsedQs[] | undefined,
+  category: string | string[] | ParsedQs | ParsedQs[]
+) => {
   switch (type) {
     case "clothing":
-      return clothCategory.includes(category);
+      return clothCategory.includes(category.toString());
     case "furniture":
-      return furnitureCategory.includes(category);
+      return furnitureCategory.includes(category.toString());
     case "cosmetics":
-      return cosmeticsCategory.includes(category);
+      return cosmeticsCategory.includes(category.toString());
     case "decoration":
-      return decorationCategory.includes(category);
+      return decorationCategory.includes(category.toString());
     case "appliances":
-      return applianceCategory.includes(category);
+      return applianceCategory.includes(category.toString());
     case "shoes":
-      return shoeCategory.includes(category);
+      return shoeCategory.includes(category.toString());
   }
 };
