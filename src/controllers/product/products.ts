@@ -9,10 +9,14 @@ import { SortOrder } from "mongoose";
 import { BadRequest } from "../../errors";
 import { validate } from "./productValidation";
 
+// interface resultType extends Document{
+//   hasNext: boolean;
+// }
+
 export const getAllProducts = async (req: any, res: any) => {
   const DEFAULT_SORT_FIELD: string = "createdAt";
   const DEFAULT_SORT_VALUE: SortOrder = 1;
-  const { type, sortOrder } = req.query;
+  const { type, sortOrder, page } = req.query;
   validate(req.query);
   const sortBy: Record<string, SortOrder> = sortOrder
     ? { price: sortOrder }
@@ -32,16 +36,16 @@ export const getAllProducts = async (req: any, res: any) => {
     }
   }
   if (type) {
-    result = await getModelData(type, sortBy, query);
+    result = await getModelData(type, sortBy, query, page);
   } else {
     const [clothes, shoes, furniture, appliances, decorations, cosmetics] =
       await Promise.all([
-        getModelData("clothes", sortBy, {}),
-        getModelData("shoes", sortBy, {}),
-        getModelData("furniture", sortBy, {}),
-        getModelData("appliances", sortBy, {}),
-        getModelData("decorations", sortBy, {}),
-        getModelData("cosmetics", sortBy, {}),
+        getModelData("clothes", sortBy, {}, page),
+        getModelData("shoes", sortBy, {}, page),
+        getModelData("furniture", sortBy, {}, page),
+        getModelData("appliances", sortBy, {}, page),
+        getModelData("decorations", sortBy, {}, page),
+        getModelData("cosmetics", sortBy, {}, page),
       ]);
     result = [
       ...clothes,
@@ -54,6 +58,7 @@ export const getAllProducts = async (req: any, res: any) => {
   }
   res.send({
     success: true,
+    // nbHit: result.length,
     data: result,
   });
 };
@@ -61,26 +66,41 @@ export const getAllProducts = async (req: any, res: any) => {
 const getModelData = async (
   type: string,
   sortBy: Record<string, SortOrder>,
-  query: Record<string, unknown>
+  query: Record<string, unknown>,
+  page: number | undefined
 ) => {
+  let result;
+  const pageNumber = page || 1;
+  //if query doesnt exist decrease limit (for all)
+  const limit = 12;
+  const skip = (pageNumber - 1) * limit;
   switch (type) {
     case "clothes":
-      return await ClothModel.find(query).sort(sortBy);
+      result = ClothModel.find(query);
     case "shoes":
-      return await ShoeModel.find(query).sort(sortBy);
+      result = ShoeModel.find(query);
+      break;
     case "appliances":
-      return await ApplianceModel.find(query).sort(sortBy);
+      result = ApplianceModel.find(query);
 
+      break;
     case "decorations":
-      return await DecorationModel.find(query).sort(sortBy);
+      result = DecorationModel.find(query);
 
     case "cosmetics":
-      return await CosmeticModel.find(query).sort(sortBy);
+      result = CosmeticModel.find(query);
 
     case "furniture":
-      return await FurnitureModel.find(query).sort(sortBy);
+      result = FurnitureModel.find(query);
 
     default:
       throw new BadRequest(`Type, ${type} doesn't exist`);
   }
+  const nextPage = pageNumber + 1;
+  const skipNext = (nextPage - 1) * limit;
+  const nextResult = await result.skip(skipNext);
+  result = await result.skip(skip).limit(limit).sort(sortBy); 
+  console.log(nextResult)
+  // result.hasNext = nextResult.length ? true:false
+  return result;
 };

@@ -1,4 +1,16 @@
 import mongoose from "mongoose";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import { InternalServerError } from "../../errors";
+
+interface UserDocument extends Document {
+  name: string;
+  username: string;
+  email: string;
+  password: string;
+  createJWT: () => string;
+  validatePassword: (candidatePassword:string) => Promise<boolean>;
+}
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -29,4 +41,25 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-export const UserModel = mongoose.model('User',UserSchema)
+UserSchema.pre("save", async function () {
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+});
+
+UserSchema.methods.createJWT = function () {
+  const jwtSecret = process.env.JWT_SECRET;
+  if (!jwtSecret) {
+    throw new InternalServerError("JWT SECRET NOT FOUND");
+  }
+  return jwt.sign({ userId: this._id, name: this.username }, jwtSecret, {
+    expiresIn: process.env.JWT_LIFETIME,
+  });
+};
+
+UserSchema.methods.validatePassword = async function (
+  candidatePassword: string
+) {
+  return await bcrypt.compare(candidatePassword, this.password);
+};
+
+export const UserModel = mongoose.model<UserDocument>("User", UserSchema);
