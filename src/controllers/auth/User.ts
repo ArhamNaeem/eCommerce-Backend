@@ -5,6 +5,10 @@ dotenv.config();
 import { StatusCodes } from "http-status-codes";
 import { BadRequest, InternalServerError } from "../../errors";
 export const register = async (req:express.Request, res: express.Response) => {
+  const { email, password } = req.body
+  if (!email || !password) {
+    throw new BadRequest('Please provide the required credential')
+  }
   const user = await UserModel.create({ ...req.body });
   const token = user.createJWT();
   res.status(StatusCodes.CREATED).send({ user: user.name, token });
