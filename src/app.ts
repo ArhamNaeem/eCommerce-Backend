@@ -7,10 +7,11 @@ import dotenv from "dotenv";
 import 'express-async-errors'
 import authRouter from "./routes/auth";
 import { InternalServerError } from "./errors";
+import passport from "passport";
 
 const app = express();
 dotenv.config();
-const port = process.env.PORT || 5100
+const port = process.env.PORT || 5000
 
 app.use(express.json());
 
@@ -18,9 +19,12 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("API");
 });
-
+app.use("/auth/google/redirect", passport.authenticate('google') ,(req, res) => {
+  res.send("redirected");
+});
 app.use("/api/v1/products", productRouter);
-app.use('/api/v1/auth/',authRouter)
+app.use('/api/v1/auth/', authRouter)
+
 app.use(notFound)
 app.use(errorHandler)
 const start = async () => {
