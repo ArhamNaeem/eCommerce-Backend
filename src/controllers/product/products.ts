@@ -16,7 +16,17 @@ export const getAllProducts = async (
   req: express.Request,
   res: express.Response
 ) => {
+  const { size }: { size?: string } = req.query
+  const { color }: {color?:string}=req.query
+  if (size) {
+    const sz = size.split(',');
+    req.query.size = sz
+  }
 
+  if (color) {
+    const clr = color.split(',');
+    req.query.color=clr
+  }
   const DEFAULT_SORT_FIELD: string = "createdAt";
   const DEFAULT_SORT_VALUE: SortOrder = 1;
   const { type, sortOrder, page }:ParsedQs = req.query;
@@ -25,7 +35,7 @@ export const getAllProducts = async (
     ? { price: sortOrder }
     : { [DEFAULT_SORT_FIELD]: DEFAULT_SORT_VALUE };
   const validFields: Record<string, string> = {
-    color: "$eq",
+    color: "$in",
     size: "$in", // size can be equal to any value inside the array
     category: "$eq",
   };
