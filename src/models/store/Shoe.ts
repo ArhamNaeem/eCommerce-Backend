@@ -14,7 +14,7 @@ const ShoeSchema = new mongoose.Schema(
       unique: true,
     },
     color: {
-      type: String,
+      type: [String],
       required: [true, "Must provide color"],
       enum: ["white", "red", "black", "blue", "purple", "green"],
     },

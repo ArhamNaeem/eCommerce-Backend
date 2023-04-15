@@ -1,8 +1,8 @@
 [
   {
     "shoe_type": "Air Max 90",
-    "img_url": "https://www.example.com/shoes/air-max-90.jpg",
-    "color": "white",
+    "img_url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/bhwrvokud9flh34cchb8/air-max-90-mens-shoes-6n3vKB.png",
+    "color": ["white","black","green"],
     "description": "Classic white and grey Air Max 90s with red accents.",
     "size": [38, 39, 42, 43, 44, 45],
     "price": 120.0,
@@ -10,9 +10,9 @@
     "quantity": 10
   },
   {
-    "shoe_type": "Black Leather Dress Shoes",
-    "img_url": "https://www.example.com/shoes/black-dress-shoes.jpg",
-    "color": "black",
+    "shoe_type": "Leather Dress Shoes",
+    "img_url": "https://cdn.shopify.com/s/files/1/0262/5804/7069/products/2_98d0f920-192e-4573-9b5b-f03dc9dfd708.jpg?v=1662985078",
+    "color": ["black","green"],
     "description": "Elegant black leather dress shoes, perfect for any formal event.",
     "size": [38, 39, 40, 41, 42, 43],
     "price": 150.0,
@@ -21,8 +21,8 @@
   },
   {
     "shoe_type": "Nike React",
-    "img_url": "https://www.example.com/shoes/nike-react-infinity-run-flyknit.jpg",
-    "color": "blue",
+    "img_url": "https://sneakernews.com/wp-content/uploads/2020/06/nike-react-vision-photo-blue-CD4373-400-6.jpg",
+    "color": ["blue"],
     "description": "Comfortable and lightweight blue running shoes with Flyknit technology.",
     "size": [39, 40, 41, 42, 43, 44, 45],
     "price": 130.0,
@@ -31,8 +31,8 @@
   },
   {
     "shoe_type": "Adidas Superstar",
-    "img_url": "https://www.example.com/shoes/adidas-superstar.jpg",
-    "color": "white",
+    "img_url": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7ed0855435194229a525aad6009a0497_9366/Superstar_Shoes_White_EG4958_01_standard.jpg",
+    "color": ["white","red"],
     "description": "Classic white and black Adidas Superstar sneakers with rubber toe cap.",
     "size": [38, 39, 44, 45],
     "price": 100.0,
@@ -41,8 +41,8 @@
   },
   {
     "shoe_type": "Nike Air Jordan 1",
-    "img_url": "https://www.example.com/shoes/nike-air-jordan-1.jpg",
-    "color": "red",
+    "img_url": "https://sneakernews.com/wp-content/uploads/2022/06/air-jordan-1-mid-triple-white-dv0991-111-1.jpg",
+    "color": ["red","green","purple","blue"],
     "description": "Iconic red and black Nike Air Jordan 1 basketball shoes.",
     "size": [38, 39, 40, 41, 42, 43, 44, 45],
     "price": 180.0,
@@ -51,8 +51,8 @@
   },
   {
     "shoe_type": "Converse Chuck Taylor All Star",
-    "img_url": "https://www.example.com/shoes/converse-chuck-taylor-all-star.jpg",
-    "color": "purple",
+    "img_url": "https://www.converse.com/dw/image/v2/BCZC_PRD/on/demandware.static/-/Sites-cnv-master-catalog/default/dw313679bf/images/e_08/M7650_E_08X1.jpg?sw=406",
+    "color": ["purple","white"],
     "description": "High-top purple Converse sneakers with white laces.",
     "size": [40, 41, 42, 43, 44, 45],
     "price": 70.0,
@@ -61,8 +61,8 @@
   },
   {
     "shoe_type": "Vans Old Skool",
-    "img_url": "https://www.example.com/shoes/vans-old-skool.jpg",
-    "color": "green",
+    "img_url": "https://static.wixstatic.com/media/2967ac_d27c2436fbb64dda8ff429e7eb2de444~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
+    "color": ["black","green","blue","red"],
     "description": "Low-top green and white Vans sneakers with iconic side stripe.",
     "size": [38, 39, 40, 41, 42, 43, 44, 45],
     "price": 65.0,
@@ -71,8 +71,8 @@
   },
   {
     "shoe_type": "Steve Madden Irenee",
-    "img_url": "https://www.example.com/shoes/steve-madden-irenee.jpg",
-    "color": "black",
+    "img_url": "https://cdn.shopify.com/s/files/1/2170/8465/products/STEVEMADDEN-DRESS_IRENEE_TAN-NUBUCK_grande.jpg?v=1569085941",
+    "color": ["green","red"],
     "description": "Simple and elegant black suede sandals with block heel.",
     "size": [38, 39, 40, 41, 42, 43],
     "price": 90.0,
@@ -81,8 +81,8 @@
   },
   {
     "shoe_type": "Reebok Classic Leather",
-    "img_url": "https://www.example.com/shoes/reebok-classic-leather.jpg",
-    "color": "white",
+    "img_url": "https://cdn.shopify.com/s/files/1/0617/9894/0836/products/14-390486.jpg?v=1666479539",
+    "color": ["white"],
     "description": "Clean and simple white leather Reebok sneakers with classic design.",
     "size": [38, 39, 42, 43, 44, 45],
     "price": 80.0,
@@ -91,8 +91,8 @@
   },
   {
     "shoe_type": "Sam Edelman Hazel",
-    "img_url": "https://www.example.com/shoes/sam-edelman-hazel.jpg",
-    "color": "red",
+    "img_url": "https://slimages.macysassets.com/is/image/MCY/products/4/optimized/22361934_fpx.tif?$filterlrg$&wid=327",
+    "color": ["red","blue","white"],
     "description": "Pointed toe red suede heels with stiletto heel.",
     "size": [38, 39, 40, 41, 42],
     "price": 120.0,
@@ -101,8 +101,8 @@
   },
   {
     "shoe_type": "Gucci Princetown",
-    "img_url": "https://www.example.com/shoes/gucci-princetown.jpg",
-    "color": "black",
+    "img_url": "https://fashionjackson.com/wp-content/uploads/2019/03/Fashion-Jackson-Wearing-Levis-501-Jeans-Gucci-Princetown-Mules-Black.jpg",
+    "color": ["black","white","green"],
     "description": "Iconic black leather loafers with gold-tone horsebit detail.",
     "size": [38, 39, 40, 41, 42],
     "price": 750.0,
@@ -111,8 +111,8 @@
   },
   {
     "shoe_type": "TOMS Classic Alpargata",
-    "img_url": "https://www.example.com/shoes/toms-classic-alpargata.jpg",
-    "color": "blue",
+    "img_url": "https://www.toms.com/dw/image/v2/BDWV_PRD/on/demandware.static/-/Sites-toms-master-catalog/default/dw0b4c8d7a/images/10017718-S.jpg?sw=900&sh=630&sm=fit&q=65",
+    "color": ["purple"],
     "description": "Casual blue canvas slip-on flats with elastic V for easy on and off.",
     "size": [38, 39, 40, 41, 42, 43, 44, 45],
     "price": 50.0,
