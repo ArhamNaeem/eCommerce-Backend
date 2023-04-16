@@ -1,6 +1,7 @@
 import express from "express";
 import productRouter from "./routes/products";
 import connectDB from "./db/connect";
+import setHeader from "./middleware/setHeader";
 import { errorHandler } from "./middleware/errorHandler";
 import { notFound } from "./middleware/notFound";
 import dotenv from "dotenv";
@@ -16,6 +17,7 @@ const ENCRYPTION_KEY = process.env.COOKIE_ENCRYPTION_KEY;
 if (!ENCRYPTION_KEY) {
   throw new InternalServerError("Cookie encryption key not defined");
 }
+app.use(setHeader)
 app.use(
   session({
     secret: ENCRYPTION_KEY,
@@ -29,7 +31,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 

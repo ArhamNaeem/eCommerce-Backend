@@ -11,25 +11,24 @@ import { BadRequest } from "../../errors";
 import { validate } from "./productValidation";
 import QueryString, { ParsedQs } from "qs";
 
-
 export const getAllProducts = async (
   req: express.Request,
   res: express.Response
 ) => {
-  const { size }: { size?: string } = req.query
-  const { color }: {color?:string}=req.query
+  const { size }: { size?: string } = req.query;
+  const { color }: { color?: string } = req.query;
   if (size) {
-    const sz = size.split(',');
-    req.query.size = sz
+    const sz = size.split(",");
+    req.query.size = sz;
   }
 
   if (color) {
-    const clr = color.split(',');
-    req.query.color=clr
+    const clr = color.split(",");
+    req.query.color = clr;
   }
   const DEFAULT_SORT_FIELD: string = "createdAt";
   const DEFAULT_SORT_VALUE: SortOrder = 1;
-  const { type, sortOrder, page }:ParsedQs = req.query;
+  const { type, sortOrder, page }: ParsedQs = req.query;
   validate(req.query);
   const sortBy = sortOrder
     ? { price: sortOrder }
@@ -41,6 +40,9 @@ export const getAllProducts = async (
   };
   const query: Record<string, Record<string, unknown>> = {};
   let result;
+  let DATA_DETAILS: Record<string,boolean> = {
+    hasNext:false,
+  }; //to check if next page exist
 
   //inserting queried parameters inside query object (makes code concise)
   for (const [field, value] of Object.entries(req.query)) {
@@ -49,29 +51,32 @@ export const getAllProducts = async (
     }
   }
   if (type) {
-    result = await getModelData(type, sortBy, query, page,false);
+    result = await getModelData(type, sortBy, query, page, false, DATA_DETAILS);
   } else {
-    const [clothes, shoes, furniture, appliances, decorations, cosmetics] =
-      await Promise.all([
-        getModelData("clothes", sortBy, {}, page,true),
-        getModelData("shoes", sortBy, {}, page,true),
-        getModelData("furniture", sortBy, {}, page,true),
-        getModelData("appliances", sortBy, {}, page,true),
-        getModelData("decorations", sortBy, {}, page,true),
-        getModelData("cosmetics", sortBy, {}, page,true),
-      ]);
+    // const [clothes, shoes, furniture, appliances, decorations, cosmetics] =
+    const [clothes, shoes] = await Promise.all([
+      getModelData("clothes", sortBy, {}, page, true, DATA_DETAILS),
+      getModelData("shoes", sortBy, {}, page, true, DATA_DETAILS),
+      // getModelData("furniture", sortBy, {}, page,true),
+      // getModelData("appliances", sortBy, {}, page,true),
+      // getModelData("decorations", sortBy, {}, page,true),
+      // getModelData("cosmetics", sortBy, {}, page,true),
+    ]);
+    //only sending back cloth and shoe data as only it contains valid images
     result = [
       ...clothes,
       ...shoes,
-      ...furniture,
-      ...appliances,
-      ...decorations,
-      ...cosmetics,
+      // ...furniture,
+      // ...appliances,
+      // ...decorations,
+      // ...cosmetics,
     ];
   }
+  // DATA_DETAILS.hasNext =result.length < DATA_DETAILS.length
   res.send({
     success: true,
-    nbHit: result.length,
+    nbHits: result.length,
+    hasNext: DATA_DETAILS.hasNext,
     data: result,
   });
 };
@@ -86,14 +91,16 @@ const getModelData = async (
     | string[]
     | QueryString.ParsedQs[]
     | undefined,
-  sendAllDocuments:boolean
+  sendAllDocuments: boolean,
+  DATA_DETAILS: Record<string,boolean>
 ) => {
   let result;
   let resultNext;
   const pageNumber = Number(page) || 1;
-  
-  const limit = sendAllDocuments? 2: 12;
+
+  const limit = sendAllDocuments ? 6 : 12;
   const skip = (pageNumber - 1) * limit;
+  const skipNext = pageNumber * limit;
   switch (type) {
     case "clothes":
       result = ClothModel.find(query);
@@ -123,6 +130,7 @@ const getModelData = async (
     default:
       throw new BadRequest(`Type, ${type} doesn't exist`);
   }
-
+  const res = await resultNext.skip(skipNext).limit(limit).sort(sortBy);
+  DATA_DETAILS.hasNext = res.length > 0
   return await result.skip(skip).limit(limit).sort(sortBy);
 };
